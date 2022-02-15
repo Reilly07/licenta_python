@@ -1,0 +1,38 @@
+{
+    "model" : {
+        "min_input_size":       416,
+        "max_input_size":       416,
+        "anchors":              [20,37, 46,84, 57,185, 96,259, 126,120, 151,298, 229,349, 257,193, 362,352],
+        "labels":               ["bicycle", "bus", "car", "motorbike", "person"]
+    },
+
+    "train": {
+        "train_image_folder":   "voc/train_image_folder/",
+        "train_annot_folder":   "voc/train_annot_folder/",
+
+        "train_times":          1,	
+        "batch_size":           8,	
+        "learning_rate":        1e-5,
+        "nb_epochs":            50,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "0",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs",
+        "saved_weights_name":   "voc_best2.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+
+        "valid_times":          1
+    }
+}
